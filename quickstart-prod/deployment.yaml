@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ng01
+  namespace: argocd-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: ng01
+  template:
+    metadata:
+      labels:
+        run: ng01
+    spec:
+      containers:
+      - name: ng01
+        image: nginx:latest
+        ports:
+          - containerPort: 80
+        imagePullPolicy: IfNotPresent
