@@ -6,7 +6,7 @@ RUN apk update && \
     apk upgrade && \
     apk add nginx
 
-EXPOSE 81
+EXPOSE 82
 STOPSIGNAL SIGTERM
 CMD ["nginx","-g","daemon off;"]
 
